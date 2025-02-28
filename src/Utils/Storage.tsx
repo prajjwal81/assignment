@@ -10,3 +10,14 @@ export const getTimers = async () => {
 export const saveTimers = async timers => {
   await AsyncStorage.setItem(TIMERS_KEY, JSON.stringify(timers));
 };
+
+const clearAllData = async () => {
+  try {
+    await AsyncStorage.clear();
+    console.log('All AsyncStorage data cleared!');
+  } catch (error) {
+    console.error('Error clearing AsyncStorage:', error);
+  }
+};
+
+// clearAllData();
